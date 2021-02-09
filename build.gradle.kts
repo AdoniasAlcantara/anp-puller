@@ -12,6 +12,8 @@ repositories {
 }
 
 dependencies {
+    implementation("org.jsoup:jsoup:1.13.1")
+
     testImplementation(kotlin("test-junit5"))
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.0")
