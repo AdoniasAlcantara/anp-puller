@@ -4,15 +4,14 @@ import io.github.adoniasalcantara.anp.model.City
 import io.github.adoniasalcantara.anp.model.FuelType
 import io.github.adoniasalcantara.anp.model.Station
 import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
 
 class Puller(
     private val target: String,
     private val cookie: Pair<String, String>,
     private val weekCode: Int
 ) {
-    fun fetch(city: City, fuelType: FuelType): Document {
-        return Jsoup.connect(target)
+    fun fetch(city: City, fuelType: FuelType): List<Station> {
+        val document = Jsoup.connect(target)
             .ignoreContentType(true)
             .cookie(cookie.first, cookie.second)
             .data("COD_SEMANA", "$weekCode")
@@ -21,5 +20,7 @@ class Puller(
             .data("COD_COMBUSTIVEL", "${fuelType.code}")
             .data("DESC_COMBUSTIVEL", fuelType.name)
             .post()
+
+        return parseDocument(document)
     }
 }
