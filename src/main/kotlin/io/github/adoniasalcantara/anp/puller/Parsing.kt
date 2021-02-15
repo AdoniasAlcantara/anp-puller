@@ -4,7 +4,6 @@ import io.github.adoniasalcantara.anp.model.Fuel
 import io.github.adoniasalcantara.anp.model.FuelType
 import io.github.adoniasalcantara.anp.model.Station
 import org.jsoup.nodes.Document
-import java.math.BigDecimal
 import java.security.MessageDigest
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
@@ -26,8 +25,10 @@ fun sanitize(input: String): String {
         .removeSuffix("/")
 }
 
-fun parseDate(dateInput: String): LocalDate {
-    return LocalDate.parse(sanitize(dateInput), dateFormatter)
+fun parseDate(dateInput: String): String {
+    return LocalDate
+        .parse(sanitize(dateInput), dateFormatter)
+        .format(DateTimeFormatter.ISO_LOCAL_DATE)
 }
 
 fun parseFuelType(fuelTypeInput: String): FuelType {
@@ -38,11 +39,12 @@ fun parseFuelType(fuelTypeInput: String): FuelType {
     error("There is no fuel type associated with \"$fuelTypeInput\"")
 }
 
-fun parseCurrency(currencyInput: String): BigDecimal {
+fun parseCurrency(currencyInput: String): Float {
     return currencyInput
         .replace(",", ".")
         .replace("-", "")
         .toBigDecimal()
+        .toFloat()
 }
 
 fun parseDocument(document: Document): List<Station> {

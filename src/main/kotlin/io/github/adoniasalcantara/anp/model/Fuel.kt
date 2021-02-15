@@ -1,10 +1,10 @@
 package io.github.adoniasalcantara.anp.model
 
-import java.math.BigDecimal
-import java.time.LocalDate
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class Fuel(
     val type: FuelType,
-    val updatedAt: LocalDate,
-    val price: BigDecimal
+    val updatedAt: String,
+    val price: Float
 )
