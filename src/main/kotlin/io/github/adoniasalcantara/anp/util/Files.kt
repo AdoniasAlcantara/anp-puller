@@ -10,6 +10,11 @@ import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.streams.toList
 
+inline fun <reified T> readJson(file: Path): T {
+    val str = Files.readString(file)
+    return Json.decodeFromString(str)
+}
+
 class FileHelper(
     private val tempDir: Path,
     private val citiesFile: Path,
@@ -29,8 +34,7 @@ class FileHelper(
     }
 
     fun readCities(): List<City> {
-        val str = Files.readString(citiesFile)
-        return Json.decodeFromString(str)
+        return readJson(citiesFile)
     }
 
     fun writeTemp(taskId: Int, stations: List<Station>) {
