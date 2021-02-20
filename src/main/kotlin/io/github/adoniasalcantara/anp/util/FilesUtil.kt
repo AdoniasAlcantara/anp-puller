@@ -15,7 +15,7 @@ inline fun <reified T> readJson(file: Path): T {
     return Json.decodeFromString(str)
 }
 
-class FileHelper(
+class FileHandler(
     private val tempDir: Path,
     private val citiesFile: Path,
     private val concatFile: Path
