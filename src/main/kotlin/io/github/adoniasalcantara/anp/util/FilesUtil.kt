@@ -24,10 +24,6 @@ class FileHandler(
         const val TEMP_FILE_EXT = ".tmp.json"
     }
 
-    private val pathMatcher by lazy {
-        FileSystems.getDefault().getPathMatcher("glob:**$TEMP_FILE_EXT")
-    }
-
     init {
         val temp = tempDir.toFile()
         if (!temp.exists()) temp.mkdir()
@@ -44,6 +40,9 @@ class FileHandler(
     }
 
     fun writeConcat() {
+        val pathMatcher = FileSystems.getDefault()
+            .getPathMatcher("glob:**$TEMP_FILE_EXT")
+
         val tempFiles = Files
             .find(tempDir, 1, { file, _ -> pathMatcher.matches(file) })
             .toList()
