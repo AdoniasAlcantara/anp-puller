@@ -14,7 +14,7 @@ data class Config(
     val cookieValue: String,
     val weekCode: Int,
     val tempDir: String = System.getProperty("java.io.tmpdir"),
-    val outFile: String = "./",
+    val outFile: String = "./stations.json",
     val citiesFile: String = "./cities.json",
     val numWorkers: Int = 4
 )
