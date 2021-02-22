@@ -3,6 +3,7 @@ package io.github.adoniasalcantara.anp.puller
 import io.github.adoniasalcantara.anp.model.Fuel
 import io.github.adoniasalcantara.anp.model.FuelType
 import io.github.adoniasalcantara.anp.model.Station
+import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import java.security.MessageDigest
 import java.time.LocalDate
@@ -45,6 +46,10 @@ fun parseCurrency(currencyInput: String): Float {
         .replace("-", "")
         .toBigDecimal()
         .toFloat()
+}
+
+fun parseHtml(html: String): List<Station> {
+    return parseDocument(Jsoup.parse(html))
 }
 
 fun parseDocument(document: Document): List<Station> {

@@ -1,8 +1,8 @@
 package io.github.adoniasalcantara.anp.task
 
 import io.github.adoniasalcantara.anp.model.FuelType
-import io.github.adoniasalcantara.anp.model.Station
 import io.github.adoniasalcantara.anp.puller.Puller
+import io.github.adoniasalcantara.anp.puller.parseHtml
 import io.github.adoniasalcantara.anp.util.FileHandler
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.async
@@ -22,18 +22,15 @@ class Worker(
             async(IO) { puller.fetch(city, fuelType) }
         }
 
-        // Merge partial results into a single map
-        val combinedResult = mutableMapOf<String, Station>()
+        // Merge partial results into a single list
+        val stations = results.awaitAll()
+            .flatMap { html -> parseHtml(html) }
+            .groupingBy { station -> station.key }
+            .reduce { _, acc, cur -> acc.copy(fuels = acc.fuels + cur.fuels) }
+            .values
+            .toList()
 
-        results.awaitAll().flatten().forEach { station ->
-            combinedResult.merge(station.key, station) { old, new ->
-                old.copy(fuels = old.fuels + new.fuels)
-            }
-        }
-
-        val stations = combinedResult.values.toList()
-
-        // Write combined result to a temp file
+        // Write merged result to a temp file
         withContext(IO) {
             fileHandler.writeTemp(taskId, stations)
         }
