@@ -31,7 +31,7 @@ class Worker(
             .toList()
 
         // Write merged result to a temp file
-        withContext(IO) {
+        if (stations.isNotEmpty()) withContext(IO) {
             fileHandler.writeTemp(taskId, stations)
         }
     }
