@@ -10,7 +10,7 @@ import java.nio.file.Paths
 
 fun main(vararg args: String) = runBlocking {
     val config = getConfig(
-        Paths.get(args.getOrElse(0) { "./config.json" })
+        Paths.get(args.firstOrNull() ?: "./config.json" )
     )
 
     val fileHandler = config.run {

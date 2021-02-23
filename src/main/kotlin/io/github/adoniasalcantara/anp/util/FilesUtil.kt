@@ -18,7 +18,7 @@ inline fun <reified T> readJson(file: Path): T {
 class FileHandler(
     private val tempDir: Path,
     private val citiesFile: Path,
-    private val concatFile: Path
+    private val outFile: Path
 ) {
     private companion object {
         const val TEMP_FILE_EXT = ".tmp.json"
@@ -47,7 +47,7 @@ class FileHandler(
             .find(tempDir, 1, { file, _ -> pathMatcher.matches(file) })
             .toList()
 
-        Files.newBufferedWriter(concatFile).use { writer ->
+        Files.newBufferedWriter(outFile).use { writer ->
             writer.write("[")
 
             tempFiles.forEachIndexed { index, file ->

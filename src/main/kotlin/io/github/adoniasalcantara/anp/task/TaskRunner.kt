@@ -12,11 +12,11 @@ class TaskRunner(
 
     suspend fun run() = withContext(Default) {
         workers.forEach {
-            launch { doWork(it) }
+            launch { dispatch(it) }
         }
     }
 
-    private suspend fun doWork(worker: Worker) {
+    private suspend fun dispatch(worker: Worker) {
         while (true) {
             val task = nextTask() ?: break
             worker.run(task)
