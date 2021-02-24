@@ -1,5 +1,6 @@
 package io.github.adoniasalcantara.anp
 
+import io.github.adoniasalcantara.anp.util.makeTempDir
 import io.github.adoniasalcantara.anp.util.readJson
 import io.github.adoniasalcantara.anp.util.timestamp
 import kotlinx.serialization.Serializable
@@ -14,7 +15,7 @@ data class Config(
     val cookieKey: String,
     val cookieValue: String,
     val weekCode: Int,
-    val tempDir: String = System.getProperty("java.io.tmpdir"),
+    val tempDir: String = makeTempDir(),
     val outFile: String = "./stations_${timestamp()}.json",
     val citiesFile: String = "./cities.json",
     val numWorkers: Int = 4

@@ -10,6 +10,10 @@ import java.nio.file.Files
 import java.nio.file.Path
 import kotlin.streams.toList
 
+fun makeTempDir() = Files
+    .createTempDirectory("anp-puller-")
+    .toString()
+
 inline fun <reified T> readJson(file: Path): T {
     val str = Files.readString(file)
     return Json.decodeFromString(str)
