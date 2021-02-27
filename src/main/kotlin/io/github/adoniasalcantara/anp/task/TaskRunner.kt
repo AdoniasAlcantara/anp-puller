@@ -6,7 +6,7 @@ import kotlinx.coroutines.withContext
 
 class TaskRunner(
     tasks: Collection<Task>,
-    private val workers: Collection<Worker>
+    private val workers: Collection<CoroutineWorker>
 ) {
     private val iterator = tasks.iterator()
 
@@ -16,7 +16,7 @@ class TaskRunner(
         }
     }
 
-    private suspend fun dispatch(worker: Worker) {
+    private suspend fun dispatch(worker: CoroutineWorker) {
         while (true) {
             val task = nextTask() ?: break
             worker.run(task)

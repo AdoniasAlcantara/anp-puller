@@ -10,7 +10,8 @@ import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.withContext
 
-class Worker(
+class CoroutineWorker(
+    val name: String,
     private val puller: Puller,
     private val fileHandler: FileHandler
 ) {
