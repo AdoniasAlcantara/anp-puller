@@ -1,9 +1,9 @@
 package io.github.adoniasalcantara.anp
 
 import io.github.adoniasalcantara.anp.puller.Puller
+import io.github.adoniasalcantara.anp.task.CoroutineWorker
 import io.github.adoniasalcantara.anp.task.Task
 import io.github.adoniasalcantara.anp.task.TaskRunner
-import io.github.adoniasalcantara.anp.task.CoroutineWorker
 import io.github.adoniasalcantara.anp.util.FileHandler
 import kotlinx.coroutines.runBlocking
 import org.slf4j.LoggerFactory.getLogger
@@ -36,7 +36,6 @@ fun main(vararg args: String) = runBlocking {
     val cities = fileHandler.readCities()
     logger.debug("Found cities file: ${config.citiesFile}.")
     logger.debug("Read ${cities.count()} cities")
-    cities.forEach { logger.trace("$it") }
 
     val workers = List(config.numWorkers) { index ->
         CoroutineWorker("Worker-$index", puller, fileHandler)
