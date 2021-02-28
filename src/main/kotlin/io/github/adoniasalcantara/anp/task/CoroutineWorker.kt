@@ -15,7 +15,7 @@ class CoroutineWorker(
     private val puller: Puller,
     private val fileHandler: FileHandler
 ) {
-    suspend fun run(task: Task) = coroutineScope {
+    suspend fun run(task: Task): Int = coroutineScope {
         val (taskId, city) = task
 
         // Fire requests concurrently for each fuel type
@@ -35,5 +35,7 @@ class CoroutineWorker(
         if (stations.isNotEmpty()) withContext(IO) {
             fileHandler.writeTemp(taskId, stations)
         }
+
+        return@coroutineScope stations.count()
     }
 }
