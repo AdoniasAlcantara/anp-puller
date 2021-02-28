@@ -20,7 +20,7 @@ class CoroutineWorker(
 
         // Fire requests concurrently for each fuel type
         val results = FuelType.values().map { fuelType ->
-            async(IO) { puller.fetch(city, fuelType) }
+            async { puller.fetch(city, fuelType) }
         }
 
         // Merge partial results into a single list

@@ -16,6 +16,7 @@ repositories {
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
+    implementation("io.ktor:ktor-client-cio:1.5.2")
     implementation("org.jsoup:jsoup:1.13.1")
     implementation("ch.qos.logback:logback-classic:1.2.3")
 

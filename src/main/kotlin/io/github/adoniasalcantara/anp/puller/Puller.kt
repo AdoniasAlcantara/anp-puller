@@ -2,25 +2,37 @@ package io.github.adoniasalcantara.anp.puller
 
 import io.github.adoniasalcantara.anp.model.City
 import io.github.adoniasalcantara.anp.model.FuelType
-import org.jsoup.Connection
-import org.jsoup.Jsoup
+import io.ktor.client.*
+import io.ktor.client.features.*
+import io.ktor.client.request.*
+import io.ktor.client.request.forms.*
+import io.ktor.http.*
 
 class Puller(
-    private val target: String,
-    private val cookie: Pair<String, String>,
+    target: String,
+    cookie: Pair<String, String>,
     private val weekCode: Int
 ) {
-    fun fetch(city: City, fuelType: FuelType): String {
-        return Jsoup.connect(target)
-            .method(Connection.Method.POST)
-            .ignoreContentType(true)
-            .cookie(cookie.first, cookie.second)
-            .data("COD_SEMANA", "$weekCode")
-            .data("COD_MUNICIPIO", "${city.code}")
-            .data("DESC_MUNICIPIO", city.name)
-            .data("COD_COMBUSTIVEL", "${fuelType.code}")
-            .data("DESC_COMBUSTIVEL", fuelType.name)
-            .execute()
-            .body()
+    private val client = HttpClient {
+        defaultRequest {
+            url(target)
+            cookie(cookie.first, cookie.second)
+        }
+
+        Charsets {
+            responseCharsetFallback = charset("Windows-1252")
+        }
+    }
+
+    suspend fun fetch(city: City, fuelType: FuelType): String {
+        return client.submitForm(
+            formParameters = Parameters.build {
+                append("COD_SEMANA", "$weekCode")
+                append("COD_MUNICIPIO", "${city.code}")
+                append("DESC_MUNICIPIO", city.name)
+                append("COD_COMBUSTIVEL", "${fuelType.code}")
+                append("DESC_COMBUSTIVEL", fuelType.name)
+            }
+        )
     }
 }
