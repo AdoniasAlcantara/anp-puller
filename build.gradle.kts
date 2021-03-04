@@ -18,7 +18,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
     implementation("io.ktor:ktor-client-cio:1.5.2")
     implementation("org.jsoup:jsoup:1.13.1")
-    implementation("ch.qos.logback:logback-classic:1.2.3")
+    implementation("org.slf4j:slf4j-api:1.8.0-beta4")
+    implementation("org.apache.logging.log4j:log4j-slf4j18-impl:2.14.0")
 
     testImplementation(kotlin("test-junit5"))
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")

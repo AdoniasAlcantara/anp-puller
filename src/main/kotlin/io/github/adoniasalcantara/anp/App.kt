@@ -8,10 +8,11 @@ import io.github.adoniasalcantara.anp.util.FileHandler
 import kotlinx.coroutines.runBlocking
 import org.slf4j.LoggerFactory.getLogger
 import java.nio.file.Paths
+import kotlin.system.exitProcess
 
 private val logger = getLogger({}::class.java.packageName)
 
-fun main(vararg args: String) = runBlocking {
+fun main(vararg args: String) = try {
     val configFile = Paths.get(args.firstOrNull() ?: "./config.json" )
     val config = getConfig(configFile)
     logger.debug("Found configuration file: $configFile.")
@@ -42,6 +43,10 @@ fun main(vararg args: String) = runBlocking {
     }
 
     val tasks = cities.mapIndexed(::Task)
-    TaskRunner(tasks, workers).run()
+    logger.info("Starting...")
+    runBlocking { TaskRunner(tasks, workers).run() }
     fileHandler.writeConcat()
+} catch(exception: Throwable) {
+    logger.error("Fatal error.", exception)
+    exitProcess(1)
 }
