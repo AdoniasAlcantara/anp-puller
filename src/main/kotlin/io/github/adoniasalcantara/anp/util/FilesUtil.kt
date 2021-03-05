@@ -1,6 +1,5 @@
 package io.github.adoniasalcantara.anp.util
 
-import io.github.adoniasalcantara.anp.model.City
 import io.github.adoniasalcantara.anp.model.Station
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
@@ -32,7 +31,6 @@ inline fun <reified T> readJson(file: Path): T {
  */
 class FileHandler(
     private val tempDir: Path,
-    private val citiesFile: Path,
     private val outFile: Path
 ) {
     private companion object {
@@ -42,10 +40,6 @@ class FileHandler(
     init {
         val temp = tempDir.toFile()
         if (!temp.exists()) temp.mkdir()
-    }
-
-    fun readCities(): List<City> {
-        return readJson(citiesFile)
     }
 
     /**

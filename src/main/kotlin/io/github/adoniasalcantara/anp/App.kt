@@ -1,10 +1,12 @@
 package io.github.adoniasalcantara.anp
 
+import io.github.adoniasalcantara.anp.model.City
 import io.github.adoniasalcantara.anp.puller.Puller
 import io.github.adoniasalcantara.anp.task.CoroutineWorker
 import io.github.adoniasalcantara.anp.task.Task
 import io.github.adoniasalcantara.anp.task.TaskRunner
 import io.github.adoniasalcantara.anp.util.FileHandler
+import io.github.adoniasalcantara.anp.util.readJson
 import kotlinx.coroutines.runBlocking
 import org.slf4j.LoggerFactory.getLogger
 import java.nio.file.Paths
@@ -29,12 +31,11 @@ fun main(vararg args: String) = try {
     val fileHandler = config.run {
         FileHandler(
             Paths.get(tempDir),
-            Paths.get(citiesFile),
-            Paths.get(outFile)
+            Paths.get(citiesFile)
         )
     }
 
-    val cities = fileHandler.readCities()
+    val cities: List<City> = Paths.get(config.citiesFile).run(::readJson)
     logger.debug("Found cities file: ${config.citiesFile}.")
     logger.debug("Read ${cities.count()} cities")
 
