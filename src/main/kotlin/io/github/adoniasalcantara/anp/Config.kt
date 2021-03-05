@@ -9,6 +9,19 @@ import java.net.URL
 import java.nio.file.NoSuchFileException
 import java.nio.file.Path
 
+/**
+ * Represents a configuration file that contains essential properties
+ * for initializing other objects.
+ *
+ * @param targetUrl URL that will be used to send requests to ANP's website.
+ * @param cookieKey key of the cookie used to access the ANP's website.
+ * @param cookieValue value of the cookie used to access the ANP's website.
+ * @param weekCode week number referring to ANP data collection.
+ * @param tempDir directory to store temporary files.
+ * @param outFile file containing the final result.
+ * @param citiesFile file containing the cities to be fetched.
+ * @param numWorkers number of simultaneous tasks that will be performed.
+ */
 @Serializable
 data class Config(
     val targetUrl: String,
@@ -25,6 +38,14 @@ fun configError(message: String) {
     error("Configuration error: $message.")
 }
 
+/**
+ * Reads the configuration file and returns a [Config] object.
+ *
+ * @param configFile the configuration file path.
+ * @return [Config] object that represents that file.
+ * @throws NoSuchFileException if the file does not exist.
+ * @throws IllegalStateException if the file contents are invalid.
+ */
 fun getConfig(configFile: Path): Config {
     val config: Config = try {
         readJson(configFile)
