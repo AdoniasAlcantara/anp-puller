@@ -13,14 +13,14 @@ import java.nio.file.Path
  * Represents a configuration file that contains essential properties
  * for initializing other objects.
  *
- * @param targetUrl URL that will be used to send requests to ANP's website.
- * @param cookieKey key of the cookie used to access the ANP's website.
- * @param cookieValue value of the cookie used to access the ANP's website.
- * @param weekCode week number referring to ANP data collection.
- * @param tempDir directory to store temporary files.
- * @param outFile file containing the final result.
- * @param citiesFile file containing the cities to be fetched.
- * @param numWorkers number of simultaneous tasks that will be performed.
+ * @property targetUrl URL used to send requests to ANP's website..
+ * @property cookieKey key of the cookie used to access the ANP's website.
+ * @property cookieValue value of the cookie used to access the ANP's website.
+ * @property weekCode week number referring to ANP data collection.
+ * @property tempDir directory where temporary files are stored.
+ * @property outFile file containing the final result.
+ * @property citiesFile file containing the cities to be fetched.
+ * @property numWorkers number of simultaneously performed tasks.
  */
 @Serializable
 data class Config(
