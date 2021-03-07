@@ -1,9 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    val kotlinVersion = "1.4.10"
-    kotlin("jvm") version kotlinVersion
-    kotlin("plugin.serialization") version kotlinVersion
+    kotlin("jvm") version "1.4.10"
+    kotlin("plugin.serialization") version "1.4.10"
+
+    id("com.github.johnrengelman.shadow") version "6.1.0"
+    id("java")
 }
 
 group = "io.github.adoniasalcantara"
@@ -32,4 +34,13 @@ tasks.test {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+tasks.jar {
+    manifest {
+        attributes(
+            "Main-Class" to "io.github.adoniasalcantara.anp.AppKt",
+            "Multi-Release" to "true"
+        )
+    }
 }
