@@ -10,11 +10,25 @@ import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.withContext
 
+/**
+ * Unit of work that processes a given task.
+ *
+ * @param name this worker's name.
+ * @param puller used to make remote requests.
+ * @param fileHandler used to store intermediate files.
+ */
 class CoroutineWorker(
     val name: String,
     private val puller: Puller,
     private val fileHandler: FileHandler
 ) {
+    /**
+     * Runs a task and returns the number of results found.
+     * This function suspends when waiting for I/O operations.
+     *
+     * @param task the source [Task]
+     * @return the number of results found.
+     */
     suspend fun run(task: Task): Int = coroutineScope {
         val (taskId, city) = task
 
