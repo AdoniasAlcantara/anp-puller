@@ -18,7 +18,7 @@ import java.nio.file.Path
  * @property cookieValue value of the cookie used to access the ANP's website.
  * @property weekCode week number referring to ANP data collection.
  * @property tempDir directory where temporary files are stored.
- * @property outFile file containing the final result.
+ * @property destFile destination file containing the final result.
  * @property citiesFile file containing the cities to be fetched.
  * @property numWorkers number of simultaneously performed tasks.
  */
@@ -29,7 +29,7 @@ data class Config(
     val cookieValue: String,
     val weekCode: Int,
     val tempDir: String = makeTempDir(),
-    val outFile: String = "./stations_${timestamp()}.json",
+    val destFile: String = "./stations_${timestamp()}.json",
     val citiesFile: String = "./cities.json",
     val numWorkers: Int = 4
 )

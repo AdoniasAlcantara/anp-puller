@@ -31,7 +31,7 @@ fun main(vararg args: String) = try {
     val fileHandler = config.run {
         FileHandler(
             Paths.get(tempDir),
-            Paths.get(citiesFile)
+            Paths.get(destFile)
         )
     }
 
