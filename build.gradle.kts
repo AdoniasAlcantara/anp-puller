@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "io.github.adoniasalcantara"
-version = "1.0-SNAPSHOT"
+version = "1.0.0-RC1"
 
 repositories {
     mavenCentral()
