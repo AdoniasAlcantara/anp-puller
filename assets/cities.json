@@ -1,0 +1,630 @@
+[
+  {
+    "code": 7408,
+    "name": "Alvorada"
+  },
+  {
+    "code": 8883,
+    "name": "Americana"
+  },
+  {
+    "code": 2065,
+    "name": "Anapolis"
+  },
+  {
+    "code": 6845,
+    "name": "Angra dos Reis"
+  },
+  {
+    "code": 8770,
+    "name": "Aracaju"
+  },
+  {
+    "code": 8907,
+    "name": "Aracatuba"
+  },
+  {
+    "code": 1816,
+    "name": "Aracruz"
+  },
+  {
+    "code": 30,
+    "name": "Arapiraca"
+  },
+  {
+    "code": 8344,
+    "name": "Ararangua"
+  },
+  {
+    "code": 8912,
+    "name": "Araraquara"
+  },
+  {
+    "code": 8926,
+    "name": "Assis"
+  },
+  {
+    "code": 7439,
+    "name": "Bage"
+  },
+  {
+    "code": 8954,
+    "name": "Barretos"
+  },
+  {
+    "code": 8956,
+    "name": "Barueri"
+  },
+  {
+    "code": 8961,
+    "name": "Bauru"
+  },
+  {
+    "code": 4876,
+    "name": "Bayeux"
+  },
+  {
+    "code": 8962,
+    "name": "Bebedouro"
+  },
+  {
+    "code": 4565,
+    "name": "Belem"
+  },
+  {
+    "code": 6865,
+    "name": "Belford Roxo"
+  },
+  {
+    "code": 2754,
+    "name": "Belo Horizonte"
+  },
+  {
+    "code": 8376,
+    "name": "Biguacu"
+  },
+  {
+    "code": 8969,
+    "name": "Birigui"
+  },
+  {
+    "code": 8377,
+    "name": "Blumenau"
+  },
+  {
+    "code": 7375,
+    "name": "Boa Vista"
+  },
+  {
+    "code": 1778,
+    "name": "Brasilia"
+  },
+  {
+    "code": 443,
+    "name": "Brumado"
+  },
+  {
+    "code": 4892,
+    "name": "Cabedelo"
+  },
+  {
+    "code": 4313,
+    "name": "Caceres"
+  },
+  {
+    "code": 7502,
+    "name": "Cachoeirinha"
+  },
+  {
+    "code": 473,
+    "name": "Camacari"
+  },
+  {
+    "code": 9025,
+    "name": "Campinas"
+  },
+  {
+    "code": 4141,
+    "name": "Campo Grande"
+  },
+  {
+    "code": 7533,
+    "name": "Canoas"
+  },
+  {
+    "code": 9043,
+    "name": "Caraguatatuba"
+  },
+  {
+    "code": 1844,
+    "name": "Cariacica"
+  },
+  {
+    "code": 5941,
+    "name": "Cascavel"
+  },
+  {
+    "code": 1284,
+    "name": "Caucaia"
+  },
+  {
+    "code": 7566,
+    "name": "Caxias do Sul"
+  },
+  {
+    "code": 5964,
+    "name": "Colombo"
+  },
+  {
+    "code": 2976,
+    "name": "Conselheiro Lafaiete"
+  },
+  {
+    "code": 2980,
+    "name": "Contagem"
+  },
+  {
+    "code": 9079,
+    "name": "Cosmopolis"
+  },
+  {
+    "code": 1301,
+    "name": "Crato"
+  },
+  {
+    "code": 8430,
+    "name": "Criciuma"
+  },
+  {
+    "code": 4347,
+    "name": "Cuiaba"
+  },
+  {
+    "code": 6015,
+    "name": "Curitiba"
+  },
+  {
+    "code": 9094,
+    "name": "Diadema"
+  },
+  {
+    "code": 4163,
+    "name": "Dourados"
+  },
+  {
+    "code": 6912,
+    "name": "Duque de Caxias"
+  },
+  {
+    "code": 7697,
+    "name": "Esteio"
+  },
+  {
+    "code": 582,
+    "name": "Feira de Santana"
+  },
+  {
+    "code": 8452,
+    "name": "Florianopolis"
+  },
+  {
+    "code": 1347,
+    "name": "Fortaleza"
+  },
+  {
+    "code": 6091,
+    "name": "Foz do Iguacu"
+  },
+  {
+    "code": 9144,
+    "name": "Franca"
+  },
+  {
+    "code": 2174,
+    "name": "Goiania"
+  },
+  {
+    "code": 7748,
+    "name": "Gravatai"
+  },
+  {
+    "code": 7750,
+    "name": "Guaiba"
+  },
+  {
+    "code": 606,
+    "name": "Guanambi"
+  },
+  {
+    "code": 9182,
+    "name": "Guaruja"
+  },
+  {
+    "code": 9183,
+    "name": "Guarulhos"
+  },
+  {
+    "code": 9189,
+    "name": "Hortolandia"
+  },
+  {
+    "code": 5281,
+    "name": "Igarassu"
+  },
+  {
+    "code": 659,
+    "name": "Ilheus"
+  },
+  {
+    "code": 2475,
+    "name": "Imperatriz"
+  },
+  {
+    "code": 3229,
+    "name": "Ipatinga"
+  },
+  {
+    "code": 8796,
+    "name": "Itabaiana"
+  },
+  {
+    "code": 683,
+    "name": "Itabuna"
+  },
+  {
+    "code": 233,
+    "name": "Itacoatiara"
+  },
+  {
+    "code": 6943,
+    "name": "Itaguai"
+  },
+  {
+    "code": 702,
+    "name": "Itamaraju"
+  },
+  {
+    "code": 9240,
+    "name": "Itapetininga"
+  },
+  {
+    "code": 9250,
+    "name": "Itaquaquecetuba"
+  },
+  {
+    "code": 9254,
+    "name": "Itatiba"
+  },
+  {
+    "code": 5302,
+    "name": "Jaboatao dos Guararapes"
+  },
+  {
+    "code": 9267,
+    "name": "Jacarei"
+  },
+  {
+    "code": 9285,
+    "name": "Jau"
+  },
+  {
+    "code": 4964,
+    "name": "Joao Pessoa"
+  },
+  {
+    "code": 3305,
+    "name": "Joao Pinheiro"
+  },
+  {
+    "code": 1451,
+    "name": "Juazeiro do Norte"
+  },
+  {
+    "code": 3315,
+    "name": "Juiz de Fora"
+  },
+  {
+    "code": 8528,
+    "name": "Laguna"
+  },
+  {
+    "code": 6268,
+    "name": "Londrina"
+  },
+  {
+    "code": 307,
+    "name": "Macapa"
+  },
+  {
+    "code": 109,
+    "name": "Maceio"
+  },
+  {
+    "code": 243,
+    "name": "Manaus"
+  },
+  {
+    "code": 3373,
+    "name": "Manhuacu"
+  },
+  {
+    "code": 4677,
+    "name": "Maraba"
+  },
+  {
+    "code": 1486,
+    "name": "Maracanau"
+  },
+  {
+    "code": 9348,
+    "name": "Marilia"
+  },
+  {
+    "code": 6308,
+    "name": "Maringa"
+  },
+  {
+    "code": 9354,
+    "name": "Matao"
+  },
+  {
+    "code": 9355,
+    "name": "Maua"
+  },
+  {
+    "code": 9368,
+    "name": "Mococa"
+  },
+  {
+    "code": 9369,
+    "name": "Mogi das Cruzes"
+  },
+  {
+    "code": 3448,
+    "name": "Montes Claros"
+  },
+  {
+    "code": 7221,
+    "name": "Natal"
+  },
+  {
+    "code": 6988,
+    "name": "Nilopolis"
+  },
+  {
+    "code": 6989,
+    "name": "Niteroi"
+  },
+  {
+    "code": 6994,
+    "name": "Nova Iguacu"
+  },
+  {
+    "code": 7918,
+    "name": "Novo Hamburgo"
+  },
+  {
+    "code": 5362,
+    "name": "Olinda"
+  },
+  {
+    "code": 9432,
+    "name": "Osasco"
+  },
+  {
+    "code": 9899,
+    "name": "Palmas"
+  },
+  {
+    "code": 4730,
+    "name": "Parauapebas"
+  },
+  {
+    "code": 9464,
+    "name": "Paulinia"
+  },
+  {
+    "code": 5384,
+    "name": "Paulista"
+  },
+  {
+    "code": 7965,
+    "name": "Pelotas"
+  },
+  {
+    "code": 6445,
+    "name": "Pinhais"
+  },
+  {
+    "code": 9508,
+    "name": "Poa"
+  },
+  {
+    "code": 7994,
+    "name": "Porto Alegre"
+  },
+  {
+    "code": 7352,
+    "name": "Porto Velho"
+  },
+  {
+    "code": 9527,
+    "name": "Praia Grande"
+  },
+  {
+    "code": 5406,
+    "name": "Recife"
+  },
+  {
+    "code": 9559,
+    "name": "Ribeirao Pires"
+  },
+  {
+    "code": 9560,
+    "name": "Ribeirao Preto"
+  },
+  {
+    "code": 16,
+    "name": "Rio Branco"
+  },
+  {
+    "code": 9566,
+    "name": "Rio Claro"
+  },
+  {
+    "code": 7043,
+    "name": "Rio de Janeiro"
+  },
+  {
+    "code": 988,
+    "name": "Salvador"
+  },
+  {
+    "code": 9595,
+    "name": "Santa Barbara Doeste"
+  },
+  {
+    "code": 8101,
+    "name": "Santana do Livramento"
+  },
+  {
+    "code": 9625,
+    "name": "Santo Andre"
+  },
+  {
+    "code": 9640,
+    "name": "Sao Bernardo do Campo"
+  },
+  {
+    "code": 9642,
+    "name": "Sao Caetano do Sul"
+  },
+  {
+    "code": 7067,
+    "name": "Sao Goncalo"
+  },
+  {
+    "code": 9647,
+    "name": "Sao Joao da Boa Vista"
+  },
+  {
+    "code": 7069,
+    "name": "Sao Joao de Meriti"
+  },
+  {
+    "code": 8700,
+    "name": "Sao Jose"
+  },
+  {
+    "code": 2585,
+    "name": "Sao Jose de Ribamar"
+  },
+  {
+    "code": 9659,
+    "name": "Sao Jose do Rio Preto"
+  },
+  {
+    "code": 9660,
+    "name": "Sao Jose dos Campos"
+  },
+  {
+    "code": 6656,
+    "name": "Sao Jose dos Pinhais"
+  },
+  {
+    "code": 8146,
+    "name": "Sao Leopoldo"
+  },
+  {
+    "code": 2587,
+    "name": "Sao Luis"
+  },
+  {
+    "code": 2019,
+    "name": "Sao Mateus"
+  },
+  {
+    "code": 9668,
+    "name": "Sao Paulo"
+  },
+  {
+    "code": 7084,
+    "name": "Sapucaia"
+  },
+  {
+    "code": 8181,
+    "name": "Sapucaia do Sul"
+  },
+  {
+    "code": 7085,
+    "name": "Saquarema"
+  },
+  {
+    "code": 2028,
+    "name": "Serra"
+  },
+  {
+    "code": 3986,
+    "name": "Sete Lagoas"
+  },
+  {
+    "code": 9700,
+    "name": "Sumare"
+  },
+  {
+    "code": 9703,
+    "name": "Suzano"
+  },
+  {
+    "code": 9726,
+    "name": "Taubate"
+  },
+  {
+    "code": 5721,
+    "name": "Teresina"
+  },
+  {
+    "code": 7102,
+    "name": "Teresopolis"
+  },
+  {
+    "code": 7107,
+    "name": "Tres Rios"
+  },
+  {
+    "code": 8742,
+    "name": "Tubarao"
+  },
+  {
+    "code": 4043,
+    "name": "Uba"
+  },
+  {
+    "code": 9768,
+    "name": "Valinhos"
+  },
+  {
+    "code": 4511,
+    "name": "Varzea Grande"
+  },
+  {
+    "code": 8294,
+    "name": "Viamao"
+  },
+  {
+    "code": 2044,
+    "name": "Vila Velha"
+  },
+  {
+    "code": 9783,
+    "name": "Vinhedo"
+  },
+  {
+    "code": 2048,
+    "name": "Vitoria"
+  },
+  {
+    "code": 5503,
+    "name": "Vitoria de Santo Antao"
+  }
+]
