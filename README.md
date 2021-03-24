@@ -64,7 +64,7 @@ Properties:
 | Name        | Required | Default                             | Description                                           |
 | ----------- | :------: | ----------------------------------- | ----------------------------------------------------- |
 | targetUrl   | Yes      | -                                   | URL used to send requests to ANP's website.           |
-| cookieLey   | Yes      | -                                   | Key of the cookie used to access the ANP's website.   |
+| cookieKey   | Yes      | -                                   | Key of the cookie used to access the ANP's website.   |
 | cookieValue | Yes      | -                                   | Value of the cookie used to access the ANP's website. |
 | weekCode    | Yes      | -                                   | Week number referring to ANP data collection.         |
 | tempDir     | No       | System's default temp directory     | Directory where temporary files are stored.           |
