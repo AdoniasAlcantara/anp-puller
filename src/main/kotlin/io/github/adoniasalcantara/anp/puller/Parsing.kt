@@ -8,7 +8,6 @@ import org.jsoup.nodes.Document
 import java.security.MessageDigest
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import java.util.*
 
 private val dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
 private val sanitizeRegex = Regex("[<>!:;+-]")

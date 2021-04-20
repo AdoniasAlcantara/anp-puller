@@ -39,7 +39,7 @@ fun main(vararg args: String) = try {
     logger.debug("Found cities file: ${config.citiesFile}.")
     logger.debug("Read ${cities.count()} cities")
 
-    val workers = List(config.numWorkers) { index ->
+    val workers = List(config.concurrency) { index ->
         CoroutineWorker("Worker-$index", puller, fileHandler)
     }
 
