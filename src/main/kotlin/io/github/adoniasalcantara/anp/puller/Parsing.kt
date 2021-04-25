@@ -71,7 +71,6 @@ fun parseDocument(document: Document): List<Station> {
         val address = data[1].text()
         val neighborhood = data[2].text()
         val fuel = Fuel(
-            fuelType,
             parseDate(data[5].text()),
             parseCurrency(data[4].text())
         )
@@ -83,7 +82,7 @@ fun parseDocument(document: Document): List<Station> {
             sanitize(neighborhood),
             sanitize(city),
             sanitize(brand),
-            listOf(fuel)
+            mapOf(fuelType to fuel)
         )
     }
 }

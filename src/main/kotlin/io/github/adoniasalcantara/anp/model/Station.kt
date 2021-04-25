@@ -10,5 +10,5 @@ data class Station(
     val neighborhood: String,
     val city: String,
     val brand: String,
-    val fuels: List<Fuel>
+    val fuels: Map<FuelType, Fuel>
 )

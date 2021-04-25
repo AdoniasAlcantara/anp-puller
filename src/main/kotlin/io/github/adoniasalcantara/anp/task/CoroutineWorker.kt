@@ -32,12 +32,10 @@ class CoroutineWorker(
     suspend fun run(task: Task): Int = coroutineScope {
         val (taskId, city) = task
 
-        // Fire requests concurrently for each fuel type
         val results = FuelType.values().map { fuelType ->
             async { puller.fetch(city, fuelType) }
         }
 
-        // Merge partial results into a single list
         val stations = results.awaitAll()
             .flatMap { html -> parseHtml(html) }
             .groupingBy { station -> station.key }
@@ -45,7 +43,6 @@ class CoroutineWorker(
             .values
             .toList()
 
-        // Write merged result to a temp file
         if (stations.isNotEmpty()) withContext(IO) {
             fileHandler.writeTemp(taskId, stations)
         }
