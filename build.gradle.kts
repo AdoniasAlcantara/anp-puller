@@ -1,8 +1,9 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.4.10"
-    kotlin("plugin.serialization") version "1.4.10"
+    val kotlinVersion = "1.5.20"
+    kotlin("jvm") version kotlinVersion
+    kotlin("plugin.serialization") version kotlinVersion
 
     id("com.github.johnrengelman.shadow") version "6.1.0"
     id("java")
@@ -16,16 +17,12 @@ repositories {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
-    implementation("io.ktor:ktor-client-cio:1.5.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
+    implementation("io.ktor:ktor-client-cio:1.6.1")
     implementation("org.jsoup:jsoup:1.13.1")
     implementation("org.slf4j:slf4j-api:1.8.0-beta4")
-    implementation("org.apache.logging.log4j:log4j-slf4j18-impl:2.14.0")
-
-    testImplementation(kotlin("test-junit5"))
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.6.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.6.0")
+    implementation("org.apache.logging.log4j:log4j-slf4j18-impl:2.14.1")
 }
 
 tasks.test {
