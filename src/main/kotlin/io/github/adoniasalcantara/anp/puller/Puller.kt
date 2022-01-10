@@ -17,6 +17,7 @@ class Puller(
         defaultRequest {
             url(target)
             cookie(cookie.first, cookie.second)
+            timeout { connectTimeoutMillis = 30000 }
         }
 
         Charsets {
